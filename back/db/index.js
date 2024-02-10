@@ -1,9 +1,14 @@
 const Sequelize = require("sequelize");
-const db = new Sequelize("tmdb", null, null, {
-  host: "localhost",
-  dialect: "postgres",
-  logging: false,
-});
+const db = new Sequelize(
+  "tmdb",
+  "bautista",
+  "8ocTiM9TT0PCNYwc347r1Wx5HCYU7euS",
+  {
+    host: "dpg-cn3timqcn0vc738q8fcg-a",
+    dialect: "postgres",
+    logging: false,
+  }
+);
 
 db.authenticate()
   .then(() => {

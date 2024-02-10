@@ -11,14 +11,20 @@ const serverUrl = process.env.SERVER_URL || `localhost:3000`;
 
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(cors({ origin: `http://${serverUrl}`, credentials: true }));
+app.use(
+  cors({
+    origin: `http://${serverUrl}`,
+    methods: [`GET`, `POST`, `DELETE`, `OPTIONS`],
+    credentials: true,
+  })
+);
 app.use(cookieParser());
 
 app.use("/api", routes);
 
 db.sync({ force: false })
   .then(() => {
-    app.listen(3001, () => {
+    app.listen(5432, () => {
       console.log("Server levantado en el 3001 👻");
     });
   })

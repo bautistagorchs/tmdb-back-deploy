@@ -24,6 +24,10 @@
     "nodemon": "^2.0.22"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "bautista",
+  "license": "ISC",
+  "engines": {
+    "node": "16.14.2",
+    "npm": "8.5.0"
+  }
 }
